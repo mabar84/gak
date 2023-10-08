@@ -18,10 +18,9 @@ const StyledLogo = styled.a`
   display: flex;
   align-items: center;
   gap: 20px;
-  transition: -webkit-text-stroke 1s;
 
   &:hover {
-    -webkit-text-stroke: 1px ${myTheme.colors.accent};
+
 
     span {
       background-color: #0f17eb;
@@ -29,6 +28,11 @@ const StyledLogo = styled.a`
       svg {
         fill: #ffffff;
       }
+    }
+
+    h1 {
+      opacity: 0.8;
+
     }
   }
 
@@ -49,7 +53,7 @@ const StyledLogo = styled.a`
 
 
   h1 {
-    //width: max-content;
+    transition: opacity 0.5s;
 
     font-size: 1.5rem;
     font-weight: 700;

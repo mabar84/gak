@@ -27,6 +27,10 @@ const StyledHeader = styled.header`
   background-color: ${myTheme.colors.primary_background};
   color: ${myTheme.colors.text};
 
+
+  //height: 100vh;
+  
+
   & .container {
     padding: 5px;
     width: 100%;
