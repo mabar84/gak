@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import styled, {css} from "styled-components";
-import {myTheme} from "../../styles/Theme.styled";
+import {GakTheme} from "../../styles/Theme.styled";
 import {Logo} from "../logo/Logo";
 import {ColorPicker} from "../ColorPicker/ColorPicker";
 
@@ -8,8 +8,6 @@ export const Header = () => {
 
     const [collapsed, setCollapsed] = useState<boolean>(true)
     const onclickHandler = () => {
-        console.log(123)
-        console.log(collapsed)
         setCollapsed(!collapsed)
     }
 
@@ -38,8 +36,7 @@ const StyledHeader = styled.header<{ $collapsed: boolean }>`
   height: 100vh;
   z-index: 1;
   border-radius: 0 0 10px 10px;
-  color: ${myTheme.colors.text};
-  background-color: ${myTheme.colors.primary_background};
+  background-color: ${GakTheme.colors.primary_background};
   transform: translateY(calc(50px - 100vh));
   display: flex;
   flex-direction: column;
@@ -60,11 +57,11 @@ const StyledHeader = styled.header<{ $collapsed: boolean }>`
     gap: 20px;
     justify-content: space-between;
 
-    ${myTheme.media.less1080} {
+    ${GakTheme.media.less1080} {
       gap: 15px;
     }
 
-    ${myTheme.media.less700} {
+    ${GakTheme.media.less700} {
       flex-direction: column;
       gap: 0;
       margin-bottom: 30px;

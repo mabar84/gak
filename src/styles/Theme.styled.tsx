@@ -1,7 +1,7 @@
-export const myTheme = {
+export const GakTheme = {
     colors: {
-        title: '#fff',
-        text: '#fff',
+        title: '#ffffff',
+        text: 'yellow',
         body_background: '#282c34',
         primary_background: '#523634',
         secondary_background: '#C9A66B',

@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import {styled} from "styled-components";
+import {GakTheme} from "../../styles/Theme.styled";
 
 export const ColorPicker = () => {
-    const [color, setColor] = useState("#000000");
+    const [color, setColor] = useState(GakTheme.colors.primary_background);
 
     const handleChange = (e: any) => {
         setColor(e.target.value);

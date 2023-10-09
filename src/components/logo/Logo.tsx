@@ -1,7 +1,7 @@
 import React from "react";
 import {Icon} from "../icon/Icon";
 import styled from "styled-components";
-import {myTheme} from "../../styles/Theme.styled";
+import {GakTheme} from "../../styles/Theme.styled";
 
 export const Logo = () => {
     return (

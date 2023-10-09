@@ -1,5 +1,5 @@
 import {createGlobalStyle} from "styled-components";
-import {myTheme} from "./Theme.styled";
+import {GakTheme} from "./Theme.styled";
 
 export const GlobalStyles = createGlobalStyle`
   *, *::before, *::after {
@@ -18,13 +18,13 @@ export const GlobalStyles = createGlobalStyle`
     scrollbar-width: none;
 
     &:focus {
-      outline: 1px solid ${myTheme.colors.title};
+      outline: 1px solid ${GakTheme.colors.title};
       border-radius: 2px;
     }
 
     &::selection {
-      color: ${myTheme.colors.secondary_background};
-      background-color: ${myTheme.colors.title};
+      color: ${GakTheme.colors.secondary_background};
+      background-color: ${GakTheme.colors.title};
     }
   }
 
@@ -48,8 +48,8 @@ export const GlobalStyles = createGlobalStyle`
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: ${myTheme.colors.body_background};
-    color: ${myTheme.colors.text}
+    background-color: ${GakTheme.colors.body_background};
+    color: ${localStorage.getItem('textColor') ? localStorage.getItem('textColor') : GakTheme.colors.text}
   }
 
   .container {
@@ -57,16 +57,16 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
     overflow: hidden;
 
-    ${myTheme.media.less1360} {
+    ${GakTheme.media.less1360} {
       max-width: 1000px;
     }
 
-    ${myTheme.media.less1080} {
+    ${GakTheme.media.less1080} {
       max-width: calc(100vw - 60px);
       margin: 0 30px;
     }
 
-    ${myTheme.media.less700} {
+    ${GakTheme.media.less700} {
       max-width: calc(100vw - 20px);
       margin: 0 10px;
     }
