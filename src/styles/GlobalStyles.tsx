@@ -1,5 +1,5 @@
 import {createGlobalStyle} from "styled-components";
-import {GakTheme} from "./Theme.styled";
+import {gakTheme} from "./Theme.styled";
 
 export const GlobalStyles = createGlobalStyle`
   *, *::before, *::after {
@@ -18,13 +18,13 @@ export const GlobalStyles = createGlobalStyle`
     scrollbar-width: none;
 
     &:focus {
-      outline: 1px solid ${GakTheme.colors.title};
+      outline: 1px solid ${gakTheme.colors.text};
       border-radius: 2px;
     }
 
     &::selection {
-      color: ${GakTheme.colors.secondary_background};
-      background-color: ${GakTheme.colors.title};
+      color: ${gakTheme.colors.secondary_background};
+      background-color: ${gakTheme.colors.text};
     }
   }
 
@@ -48,8 +48,8 @@ export const GlobalStyles = createGlobalStyle`
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: ${GakTheme.colors.body_background};
-    color: ${localStorage.getItem('textColor') ? localStorage.getItem('textColor') : GakTheme.colors.text}
+    background-color: ${gakTheme.colors.body_background};
+    color: ${gakTheme.colors.text}
   }
 
   .container {
@@ -57,16 +57,16 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
     overflow: hidden;
 
-    ${GakTheme.media.less1360} {
+    ${gakTheme.media.less1360} {
       max-width: 1000px;
     }
 
-    ${GakTheme.media.less1080} {
+    ${gakTheme.media.less1080} {
       max-width: calc(100vw - 60px);
       margin: 0 30px;
     }
 
-    ${GakTheme.media.less700} {
+    ${gakTheme.media.less700} {
       max-width: calc(100vw - 20px);
       margin: 0 10px;
     }

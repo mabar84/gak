@@ -1,29 +1,35 @@
 import React, {useState} from "react";
 import styled, {css} from "styled-components";
-import {GakTheme} from "../../styles/Theme.styled";
+import {gakTheme} from "../../styles/Theme.styled";
 import {Logo} from "../logo/Logo";
 import {ColorPicker} from "../ColorPicker/ColorPicker";
+import {StyledButton} from "../button/Button";
 
 export const Header = () => {
 
-    const [collapsed, setCollapsed] = useState<boolean>(true)
+    const [opened, setOpened] = useState<boolean>(false)
+
     const onclickHandler = () => {
-        setCollapsed(!collapsed)
+        setOpened(!opened)
     }
 
 
     return (
-        <StyledHeader $collapsed={collapsed}>
-            <ColorPicker/>
-            <div className="container">
+        <StyledHeader className="container" $opened={opened}>
+            <div className={'headerTop'}>
                 <p>settings</p>
+                <ColorPicker/>
 
             </div>
 
 
-            <div className="container">
+            <div className={'headerBottom'}>
                 <Logo/>
-                <button onClick={onclickHandler}>Настройки</button>
+
+                <StyledButton onClick={onclickHandler}>
+                    {opened ? 'Свернуть' : 'Настройки'}
+                </StyledButton>
+
             </div>
 
 
@@ -32,24 +38,20 @@ export const Header = () => {
 };
 
 
-const StyledHeader = styled.header<{ $collapsed: boolean }>`
+const StyledHeader = styled.header<{ $opened: boolean }>`
   height: 100vh;
+  padding: 0 20px;
+
   z-index: 1;
   border-radius: 0 0 10px 10px;
-  background-color: ${GakTheme.colors.primary_background};
-  transform: translateY(calc(50px - 100vh));
+  background-color: ${gakTheme.colors.primary_background};
+  transform: translateY(calc(44px - 100vh));
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: transform 2s;
 
-
-  ${(props) => props.$collapsed && css`
-    transform: translateY(0);
-
-
-  `}
-  & .container {
+  .headerBottom {
     padding: 5px;
     width: 100%;
     display: flex;
@@ -57,15 +59,18 @@ const StyledHeader = styled.header<{ $collapsed: boolean }>`
     gap: 20px;
     justify-content: space-between;
 
-    ${GakTheme.media.less1080} {
+    ${gakTheme.media.less1080} {
       gap: 15px;
     }
 
-    ${GakTheme.media.less700} {
+    ${gakTheme.media.less700} {
       flex-direction: column;
       gap: 0;
       margin-bottom: 30px;
     }
   }
 
+  ${(props) => props.$opened && css`
+    transform: translateY(0);
+  `}
 `;

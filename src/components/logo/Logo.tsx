@@ -1,7 +1,7 @@
 import React from "react";
 import {Icon} from "../icon/Icon";
 import styled from "styled-components";
-import {GakTheme} from "../../styles/Theme.styled";
+import {gakTheme} from "../../styles/Theme.styled";
 
 export const Logo = () => {
     return (
@@ -21,7 +21,7 @@ const StyledLogo = styled.a`
 
   &:hover {
     span {
-      background-color: #0f17eb;
+      background-color: ${gakTheme.colors.accent};
 
       svg {
         fill: #ffffff;
@@ -30,7 +30,6 @@ const StyledLogo = styled.a`
 
     h1 {
       opacity: 0.8;
-
     }
   }
 
@@ -41,7 +40,7 @@ const StyledLogo = styled.a`
     transition: background-color 1s;
 
     svg {
-      fill: #0f17eb;
+      fill: ${gakTheme.colors.accent};;
       transition: fill 1s;
       display: flex;
       align-items: center;
@@ -52,7 +51,6 @@ const StyledLogo = styled.a`
 
   h1 {
     transition: opacity 0.5s;
-
     font-size: 1.5rem;
     font-weight: 700;
     text-align: center;
