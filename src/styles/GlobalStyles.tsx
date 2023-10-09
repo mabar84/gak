@@ -8,14 +8,31 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  *::selection {
-    color: ${myTheme.colors.secondary_background};
-    background-color: ${myTheme.colors.title};
+  input, button {
+    border: none;
+    outline: none;
+    border-radius: 2px;
   }
 
   * {
     scrollbar-width: none;
+
+    &:focus {
+      outline: 1px solid ${myTheme.colors.title};
+      border-radius: 2px;
+    }
+
+    &::selection {
+      color: ${myTheme.colors.secondary_background};
+      background-color: ${myTheme.colors.title};
+    }
   }
+
+  //
+  //*:focus-within {
+  //  background: #ff8;
+  //  color: red;
+  //}
 
   body::-webkit-scrollbar {
     width: 0;

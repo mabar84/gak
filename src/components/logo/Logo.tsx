@@ -20,8 +20,6 @@ const StyledLogo = styled.a`
   gap: 20px;
 
   &:hover {
-
-
     span {
       background-color: #0f17eb;
 

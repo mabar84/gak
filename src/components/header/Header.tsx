@@ -2,10 +2,11 @@ import React, {useState} from "react";
 import styled, {css} from "styled-components";
 import {myTheme} from "../../styles/Theme.styled";
 import {Logo} from "../logo/Logo";
+import {ColorPicker} from "../ColorPicker/ColorPicker";
 
 export const Header = () => {
 
-    const [collapsed, setCollapsed] = useState<boolean>(false)
+    const [collapsed, setCollapsed] = useState<boolean>(true)
     const onclickHandler = () => {
         console.log(123)
         console.log(collapsed)
@@ -15,13 +16,10 @@ export const Header = () => {
 
     return (
         <StyledHeader $collapsed={collapsed}>
-
-
+            <ColorPicker/>
             <div className="container">
                 <p>settings</p>
-                <p>settings</p>
-                <p>settings</p>
-                <p>settings</p>
+
             </div>
 
 
@@ -47,6 +45,7 @@ const StyledHeader = styled.header<{ $collapsed: boolean }>`
   flex-direction: column;
   justify-content: space-between;
   transition: transform 2s;
+
 
   ${(props) => props.$collapsed && css`
     transform: translateY(0);
