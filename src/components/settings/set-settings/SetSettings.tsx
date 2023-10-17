@@ -2,19 +2,16 @@ import React from 'react';
 import {ChooseColor} from '../../choose-color/chooseColor';
 import {gakTheme} from '../../../styles/Theme.styled';
 import {styled} from 'styled-components';
+import {HeaderPropsType} from '../../header/Header';
 
-type SetSettingsPropsType = {
-    setTextColor: (c: string) => void
-}
-
-
-export const SetSettings = ({setTextColor}: SetSettingsPropsType) => {
+export const SetSettings = (props: HeaderPropsType) => {
     return (
         <StyledSetSettings>
-            <ChooseColor setTextColor={setTextColor} text={'Цвет текста'} color={gakTheme.colors.text}/>
-            {/*<ChooseColor text={'Общий фон'} color={gakTheme.colors.background}/>*/}
-            {/*<ChooseColor text={'Основной цвет'} color={gakTheme.colors.primary}/>*/}
-            {/*<ChooseColor text={'Дополнительный цвет'} color={gakTheme.colors.secondary}/>*/}
+            <ChooseColor customColor={props.setTextColor} text={'Цвет текста'} color={gakTheme.colors.text}/>
+            <ChooseColor customColor={props.setBackground} text={'Общий фон'} color={gakTheme.colors.background}/>
+            <ChooseColor customColor={props.setPrimary} text={'Основной цвет'} color={gakTheme.colors.primary}/>
+            <ChooseColor customColor={props.setSecondary} text={'Дополнительный цвет'}
+                         color={gakTheme.colors.secondary}/>
         </StyledSetSettings>
     );
 };

@@ -3,18 +3,15 @@ import {styled} from 'styled-components';
 import {DemoSettings} from '../demo/DemoSettings';
 import {SetSettings} from './set-settings/SetSettings';
 import {StyledButton} from '../button/Button';
+import {HeaderPropsType} from '../header/Header';
 
-type SettingsPropsType = {
-    setTextColor: (c: string) => void
-}
-
-export const Settings = ({setTextColor}: SettingsPropsType) => {
+export const Settings = ({...props}: HeaderPropsType) => {
     return (
         <StyledSettings className={'settings'}>
             <h4>Настройки приложения</h4>
 
             <div className="flex-container">
-                <SetSettings setTextColor={setTextColor}/>
+                <SetSettings {...props}/>
 
                 <DemoSettings/>
             </div>

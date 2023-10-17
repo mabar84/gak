@@ -3,6 +3,9 @@ import {gakTheme} from './Theme.styled';
 
 type GlobalStylesPropsType = {
     $textColor: string
+    $background: string
+    $primary: string
+    $secondary: string
 }
 
 export const GlobalStyles = createGlobalStyle<GlobalStylesPropsType>`
@@ -46,7 +49,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesPropsType>`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: ${gakTheme.colors.background};
-    color: ${(props) => props.$textColor}
+    color: ${gakTheme.colors.text}
 
   }
 
@@ -80,8 +83,19 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesPropsType>`
   }
 
   .demo {
+    background-color: ${(props) => props.$background};
+
     .text {
       color: ${(props) => props.$textColor};
+    }
+
+    .primary {
+      background-color: ${(props) => props.$primary};
+    }
+
+    .item {
+      background-color: ${(props) => props.$secondary};
+
     }
   }
 

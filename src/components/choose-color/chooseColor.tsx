@@ -2,24 +2,22 @@ import React from 'react';
 import {styled} from 'styled-components';
 import {ColorPicker} from '../ColorPicker/ColorPicker';
 
-
 type ChooseColorPropsType = {
     text: string
     color: string
-    setTextColor: (c: string) => void
+    customColor: (c: string) => void
 }
 
-export const ChooseColor = ({text, color, setTextColor}: ChooseColorPropsType) => {
+export const ChooseColor = (props: ChooseColorPropsType) => {
     return (
         <StyledChooseColor>
-            <span>{text}</span>
-            <ColorPicker setTextColor={setTextColor} color={color}/>
+            <span>{props.text}</span>
+            <ColorPicker customColor={props.customColor} color={props.color}/>
         </StyledChooseColor>
     );
 };
 
 const StyledChooseColor = styled.div`
-
   display: flex;
   justify-content: space-between;
   align-items: center;

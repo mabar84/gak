@@ -2,16 +2,17 @@ import React, {useState} from 'react';
 import styled, {css} from 'styled-components';
 import {gakTheme} from '../../styles/Theme.styled';
 import {Logo} from '../logo/Logo';
-import {ColorPicker} from '../ColorPicker/ColorPicker';
 import {StyledButton} from '../button/Button';
-import {ChooseColor} from '../choose-color/chooseColor';
 import {Settings} from '../settings/Settings';
 
-type HeaderPropsType = {
+export type HeaderPropsType = {
     setTextColor: (c: string) => void
+    setBackground: (c: string) => void
+    setPrimary: (c: string) => void
+    setSecondary: (c: string) => void
 }
 
-export const Header = ({setTextColor}: HeaderPropsType) => {
+export const Header = (props: HeaderPropsType) => {
 
     const [opened, setOpened] = useState<boolean>(true) //open\close settings
 
@@ -23,7 +24,7 @@ export const Header = ({setTextColor}: HeaderPropsType) => {
     return (
         <StyledHeader className="container" $opened={opened}>
 
-            <Settings setTextColor={setTextColor}/>
+            <Settings {...props}/>
 
             <div className={'headerBottom'}>
                 <Logo/>

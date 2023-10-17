@@ -1,24 +1,22 @@
 import React, {useState} from 'react';
 import {styled} from 'styled-components';
-import {gakTheme} from '../../styles/Theme.styled';
 
 type ColorPickerPropsColor = {
     color: string
-    setTextColor: (c: string) => void
+    customColor: (c: string) => void
 }
 
 export const ColorPicker = (props: ColorPickerPropsColor) => {
     const [color, setColor] = useState(props.color);
+    console.log(props)
 
     const handleChange = (e: any) => {
         setColor(e.target.value)
-        props.setTextColor(color);
-
+        props.customColor(color);
     };
 
     return (
         <StyledColorPicker type="color" value={color} onChange={handleChange}>
-
         </StyledColorPicker>
     );
 };
@@ -26,11 +24,8 @@ export const ColorPicker = (props: ColorPickerPropsColor) => {
 const StyledColorPicker = styled.input`
   width: 30px;
   height: 28px;
-  padding: 0px 2px;
+  padding: 0 2px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-
-
-
 `
