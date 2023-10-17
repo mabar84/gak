@@ -8,11 +8,11 @@ type ChooseColorPropsType = {
     color: string
 }
 
-export const ChooseColor = (props: ChooseColorPropsType) => {
+export const ChooseColor = ({text, color}: ChooseColorPropsType) => {
     return (
         <StyledChooseColor>
-            <span>{props.text}</span>
-            <ColorPicker color={props.color}/>
+            <span>{text}</span>
+            <ColorPicker color={color}/>
         </StyledChooseColor>
     );
 };

@@ -1,9 +1,9 @@
 export const gakTheme = {
     colors: {
         text: `${localStorage.getItem('textColor') ? localStorage.getItem('textColor') : '#ffffff'}`,
-        background: `${localStorage.getItem('textColor') ? localStorage.getItem('textColor') : '#E9F1FA'}`,
-        primary: `${localStorage.getItem('textColor') ? localStorage.getItem('textColor') : '#0f17eb'}`,
-        secondary: `${localStorage.getItem('textColor') ? localStorage.getItem('textColor') : '#0086ff'}`,
+        background: `${localStorage.getItem('background') ? localStorage.getItem('background') : '#E9F1FA'}`,
+        primary: `${localStorage.getItem('primary') ? localStorage.getItem('primary') : '#0f17eb'}`,
+        secondary: `${localStorage.getItem('secondary') ? localStorage.getItem('secondary') : '#0086ff'}`,
         accent: '#060bb2'
     },
     media: {

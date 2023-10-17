@@ -2,14 +2,6 @@ import React from 'react';
 import {styled} from 'styled-components';
 import {gakTheme} from '../../styles/Theme.styled';
 
-export const Button = () => {
-    return (
-        <StyledButton>
-            Демонстрация
-        </StyledButton>
-    );
-};
-
 export const StyledButton = styled.button`
   min-width: 80px;
   padding: 5px;
@@ -18,14 +10,20 @@ export const StyledButton = styled.button`
   border-radius: 5px;
   cursor: pointer;
   border: none;
-  box-shadow: 0px 1px ${gakTheme.colors.background};
   outline: none;
   font-weight: 500;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.9;
+  }
 
   &:active {
     box-shadow: none;
     border: none;
     outline: none;
     transform: translateY(1px);
+
+
   }
 `
