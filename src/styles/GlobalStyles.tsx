@@ -1,5 +1,5 @@
-import {createGlobalStyle} from "styled-components";
-import {gakTheme} from "./Theme.styled";
+import {createGlobalStyle} from 'styled-components';
+import {gakTheme} from './Theme.styled';
 
 export const GlobalStyles = createGlobalStyle`
   *, *::before, *::after {
@@ -18,12 +18,11 @@ export const GlobalStyles = createGlobalStyle`
     scrollbar-width: none;
 
     &:focus {
-      outline: 1px solid ${gakTheme.colors.text};
-      border-radius: 2px;
+      outline: none;
     }
 
     &::selection {
-      color: ${gakTheme.colors.secondary_background};
+      color: ${gakTheme.colors.secondary};
       background-color: ${gakTheme.colors.text};
     }
   }
@@ -48,7 +47,7 @@ export const GlobalStyles = createGlobalStyle`
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: ${gakTheme.colors.body_background};
+    background-color: ${gakTheme.colors.background};
     color: ${gakTheme.colors.text}
   }
 

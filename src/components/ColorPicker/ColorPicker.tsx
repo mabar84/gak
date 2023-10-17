@@ -1,9 +1,13 @@
-import React, {useState} from "react";
-import {styled} from "styled-components";
-import {gakTheme} from "../../styles/Theme.styled";
+import React, {useState} from 'react';
+import {styled} from 'styled-components';
+import {gakTheme} from '../../styles/Theme.styled';
 
-export const ColorPicker = () => {
-    const [color, setColor] = useState(gakTheme.colors.primary_background);
+type ColorPickerPropsColor = {
+    color: string
+}
+
+export const ColorPicker = (props: ColorPickerPropsColor) => {
+    const [color, setColor] = useState(props.color);
 
     const handleChange = (e: any) => {
         setColor(e.target.value);
@@ -11,23 +15,19 @@ export const ColorPicker = () => {
 
     return (
         <StyledColorPicker type="color" value={color} onChange={handleChange}>
-            {/*<div*/}
-            {/*    style={{*/}
-            {/*        backgroundColor: color,*/}
-            {/*        width: "100px",*/}
-            {/*        height: "100px",*/}
-            {/*        marginTop: "10px",*/}
-            {/*    }}*/}
-            {/*></div>*/}
+
         </StyledColorPicker>
     );
 };
 
 const StyledColorPicker = styled.input`
-  padding: 0px;
-  background-color: transparent;
+  width: 30px;
+  height: 28px;
+  padding: 0px 2px;
   border: none;
-  //border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+
 
 
 `
