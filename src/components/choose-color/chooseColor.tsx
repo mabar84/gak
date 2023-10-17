@@ -6,13 +6,14 @@ import {ColorPicker} from '../ColorPicker/ColorPicker';
 type ChooseColorPropsType = {
     text: string
     color: string
+    setTextColor: (c: string) => void
 }
 
-export const ChooseColor = ({text, color}: ChooseColorPropsType) => {
+export const ChooseColor = ({text, color, setTextColor}: ChooseColorPropsType) => {
     return (
         <StyledChooseColor>
             <span>{text}</span>
-            <ColorPicker color={color}/>
+            <ColorPicker setTextColor={setTextColor} color={color}/>
         </StyledChooseColor>
     );
 };

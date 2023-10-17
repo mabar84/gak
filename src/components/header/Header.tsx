@@ -7,7 +7,11 @@ import {StyledButton} from '../button/Button';
 import {ChooseColor} from '../choose-color/chooseColor';
 import {Settings} from '../settings/Settings';
 
-export const Header = () => {
+type HeaderPropsType = {
+    setTextColor: (c: string) => void
+}
+
+export const Header = ({setTextColor}: HeaderPropsType) => {
 
     const [opened, setOpened] = useState<boolean>(true) //open\close settings
 
@@ -19,7 +23,7 @@ export const Header = () => {
     return (
         <StyledHeader className="container" $opened={opened}>
 
-            <Settings/>
+            <Settings setTextColor={setTextColor}/>
 
             <div className={'headerBottom'}>
                 <Logo/>

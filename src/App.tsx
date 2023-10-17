@@ -14,7 +14,7 @@ const App = () => {
 
     return (
         <StyledApp className="App" $textColor={textColor}>
-            <Header/>
+            <Header setTextColor={setTextColor}/>
             <GlobalStyles $textColor={textColor}/>
         </StyledApp>
     );

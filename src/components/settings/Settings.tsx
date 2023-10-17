@@ -4,13 +4,17 @@ import {DemoSettings} from '../demo/DemoSettings';
 import {SetSettings} from './set-settings/SetSettings';
 import {StyledButton} from '../button/Button';
 
-export const Settings = () => {
+type SettingsPropsType = {
+    setTextColor: (c: string) => void
+}
+
+export const Settings = ({setTextColor}: SettingsPropsType) => {
     return (
         <StyledSettings className={'settings'}>
             <h4>Настройки приложения</h4>
 
             <div className="flex-container">
-                <SetSettings/>
+                <SetSettings setTextColor={setTextColor}/>
 
                 <DemoSettings/>
             </div>

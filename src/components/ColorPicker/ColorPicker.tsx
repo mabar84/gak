@@ -4,13 +4,16 @@ import {gakTheme} from '../../styles/Theme.styled';
 
 type ColorPickerPropsColor = {
     color: string
+    setTextColor: (c: string) => void
 }
 
 export const ColorPicker = (props: ColorPickerPropsColor) => {
     const [color, setColor] = useState(props.color);
 
     const handleChange = (e: any) => {
-        setColor(e.target.value);
+        setColor(e.target.value)
+        props.setTextColor(color);
+
     };
 
     return (

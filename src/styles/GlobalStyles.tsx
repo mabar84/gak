@@ -78,5 +78,13 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesPropsType>`
   ul {
     list-style: none;
   }
+
+  .demo {
+    .text {
+      color: ${(props) => props.$textColor};
+    }
+  }
+
+
 `;
 
