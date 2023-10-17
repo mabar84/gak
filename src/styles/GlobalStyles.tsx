@@ -1,7 +1,11 @@
 import {createGlobalStyle} from 'styled-components';
 import {gakTheme} from './Theme.styled';
 
-export const GlobalStyles = createGlobalStyle`
+type GlobalStylesPropsType = {
+    $textColor: string
+}
+
+export const GlobalStyles = createGlobalStyle<GlobalStylesPropsType>`
   *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -27,12 +31,6 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
-  //
-  //*:focus-within {
-  //  background: #ff8;
-  //  color: red;
-  //}
-
   body::-webkit-scrollbar {
     width: 0;
   }
@@ -48,7 +46,8 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: ${gakTheme.colors.background};
-    color: ${gakTheme.colors.text}
+    color: ${(props) => props.$textColor}
+
   }
 
   .container {
